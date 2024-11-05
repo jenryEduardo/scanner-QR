@@ -1,0 +1,12 @@
+<div>
+  <h1>Escáner de Código de Barras</h1>
+  <video #video width="600" height="400" *ngIf="scanning"></video>
+  <button (click)="startScanning()" [disabled]="scanning">Iniciar Escaneo</button>
+  <button (click)="stopScanning()" [disabled]="!scanning">Detener Escaneo</button>
+
+  <div *ngIf="resultText">
+    <h2>Código Detectado:</h2>
+    <p>{{ resultText }}</p>
+    <button (click)="printCode()">Imprimir Código</button> <!-- Botón para imprimir -->
+  </div>
+</div>
